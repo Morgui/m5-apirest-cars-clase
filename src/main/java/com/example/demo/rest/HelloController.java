@@ -14,11 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 //@Controller //cuando creamos un controlador de spring mvc, redireccionando plantillas del back al front
 //@Component //anotación génerica para indicar que es un componente que debe ser inyectado y demas
 
-@RequestMapping("/api") // Enrutado HTTP //requestmapping a nivel de clase
+//@RequestMapping("/api") // Enrutado HTTP //requestmapping a nivel de clase
 @RestController  // más especializada y por defecto
 public class HelloController {
 
 	private final Logger log = LoggerFactory.getLogger(HelloController.class);
+	
+	@GetMapping("/")
+	public String index() {
+
+		return "API REST is at /api/....";
+	}
 	/*
 	 * http://localhost:8080/api/hello
 	 * @return
@@ -36,6 +42,19 @@ public class HelloController {
 		log.error("Executing hello world method from logger");
 
 		return "Hola Mundo";
+	}
+	
+	/**
+	 * http://localhost:8080/api/hello
+	 * @return
+	 */
+	@GetMapping("/api/bye")
+	public String bye() {
+		log.info("Executing bye world method from logger");
+		// diferentes niveles de logger:
+		// log.warn("Executing hello world method from logger");
+		// log.error("Executing hello world method from logger");
+		return "Adios mundo cruel";
 	}
 	
 	
