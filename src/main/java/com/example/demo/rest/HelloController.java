@@ -28,10 +28,11 @@ public class HelloController {
 				<html>
 				<head>
 				<meta charset="ISO-8859-1">
-				<title>API REST is at /api/....</title>
+				<title>API REST Example (Heroku)</title>
 				</head>
 				<body>
-				<h1 style="color:red;">Springboot Api Rest Example!!</h1>
+				<h1 style="color:blue;">Springboot Api Rest Example!!</h1>
+				<a href="/api/cars">Cars Database</a>
 				</body>
 				</html>
 				""";
